@@ -17,3 +17,5 @@ let digits =
     Char.code '0' <= code && code <= Char.code '9'
   )
 
+let fullname =
+  lift3 (fun first space last -> first ^ space ^ last) word (string " ") word
