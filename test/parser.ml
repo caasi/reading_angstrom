@@ -9,6 +9,9 @@ let test_digits () =
 let test_fullname () =
   Alcotest.(check string) "same string" (parse fullname "John Doe") ("John Doe")
 
+let test_fullname2 () =
+  Alcotest.(check string) "same string" (parse fullname2 "Jane Doe") ("Jane Doe")
+
 let () =
   let open Alcotest in
   run "Example" [
@@ -16,5 +19,6 @@ let () =
       test_case "Word" `Quick test_word;
       test_case "Digits" `Quick test_digits;
       test_case "Fullname" `Quick test_fullname;
+      test_case "Fullname2" `Quick test_fullname2;
     ];
   ]

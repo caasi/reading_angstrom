@@ -19,3 +19,9 @@ let digits =
 
 let fullname =
   lift3 (fun first space last -> first ^ space ^ last) word (string " ") word
+
+let fullname2 =
+  let+ first = word
+  and+ space = string " "
+  and+ last = word in
+  first ^ space ^ last
