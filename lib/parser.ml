@@ -11,3 +11,9 @@ let word =
     Char.code 'A' <= code && code <= Char.code 'z'
   )
 
+let digits =
+  take_while (fun c ->
+    let code = Char.code c in
+    Char.code '0' <= code && code <= Char.code '9'
+  )
+
