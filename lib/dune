@@ -1,0 +1,4 @@
+(library
+  (name example)
+  (libraries angstrom)
+  (public_name reading-angstrom))
