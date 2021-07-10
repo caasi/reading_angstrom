@@ -21,6 +21,12 @@ let fullname =
   lift3 (fun first space last -> first ^ space ^ last) word (string " ") word
 
 let fullname2 =
+  word >>= (fun first ->
+    (string " ") >>= (fun space ->
+      word >>= (fun last ->
+        return (first ^ space ^ last))))
+
+let fullname3 =
   let+ first = word
   and+ space = string " "
   and+ last = word in
