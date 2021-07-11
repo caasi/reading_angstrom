@@ -31,3 +31,27 @@ let fullname3 =
   and+ space = string " "
   and+ last = word in
   first ^ space ^ last
+
+let spaces =
+  take_while (fun c -> c == ' ')
+
+let comma = string ","
+
+let product_name =
+  sep_by spaces word >>| String.concat " "
+
+let price = digits >>| int_of_string
+
+let developer_name = product_name
+
+let product =
+  let open Product in
+  let+ p = product_name
+  and+ _ = comma
+  and+ n = price
+  and+ _ = comma
+  and+ d = developer_name in
+  { product=p; price=n; developer=d }
+
+let product_list =
+  sep_by end_of_line product
