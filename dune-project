@@ -25,5 +25,5 @@
     (alcotest :with-test)
     (angstrom (< 0.15.0))
     (ocaml
-      (>= 4.02.3))
+      (>= 4.08.1))
     dune))
