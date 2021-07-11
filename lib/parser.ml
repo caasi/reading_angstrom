@@ -33,7 +33,7 @@ let fullname3 =
   first ^ space ^ last
 
 let spaces =
-  take_while (fun c -> c == ' ')
+  take_while1 (fun c -> c = ' ')
 
 let comma = string ","
 

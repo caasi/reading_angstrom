@@ -19,6 +19,12 @@ let test_fullname2 () =
 let test_fullname3 () =
   Alcotest.(check string) "same string" (parse fullname2 "John Snow") ("John Snow")
 
+let test_spaces () =
+  Alcotest.(check string) "same string" (parse spaces "  ") ("  ")
+
+let test_product_name () =
+  Alcotest.(check string) "same string" (parse product_name "Death Stranding") ("Death Stranding")
+
 let test_product () =
   Alcotest.(check product_object)
     "same product"
@@ -60,6 +66,8 @@ let () =
       test_case "Fullname" `Quick test_fullname;
       test_case "Fullname2" `Quick test_fullname2;
       test_case "Fullname3" `Quick test_fullname3;
+      test_case "Spaces" `Quick test_spaces;
+      test_case "Product Name" `Quick test_product_name;
       test_case "Product" `Quick test_product;
       test_case "Product List" `Quick test_product_list;
     ];
