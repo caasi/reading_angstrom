@@ -23,7 +23,7 @@
   (description "Reading Angstrom source codes and create some parsers.")
   (depends
     (alcotest :with-test)
-    (angstrom (< 0.15.0))
+    (angstrom (= 0.15.0))
     (ocaml
       (>= 4.08.1))
     dune))

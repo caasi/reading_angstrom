@@ -9,7 +9,7 @@ homepage: "https://github.com/caasi/reading_angstrom/"
 bug-reports: "https://github.com/caasi/reading_angstrom/issues"
 depends: [
   "alcotest" {with-test}
-  "angstrom" {< "0.15.0"}
+  "angstrom" {= "0.15.0"}
   "ocaml" {>= "4.08.1"}
   "dune" {>= "2.8"}
   "odoc" {with-doc}
