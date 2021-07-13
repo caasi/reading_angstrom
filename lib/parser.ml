@@ -5,11 +5,15 @@ let parse p str =
   | Ok v -> v
   | Error _ -> failwith "parsing error"
 
-let word =
-  take_while (fun c ->
-    let code = Char.code c in
-    Char.code 'A' <= code && code <= Char.code 'z'
-  )
+let is_upper c =
+  let code = Char.code c in
+  Char.code 'A' <= code && code <= Char.code 'Z'
+
+let is_lower c =
+  let code = Char.code c in
+  Char.code 'a' <= code && code <= Char.code 'z'
+
+let word = take_while (fun c -> is_upper c || is_lower c)
 
 let digits =
   take_while (fun c ->
